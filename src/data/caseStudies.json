@@ -2,25 +2,25 @@
   {
     "imagePath": "/images/cases/Microsoft.jpg",
     "company": "Microsoft",
-    "subtitle": "Modelo híbrido + DevOps",
-    "description": "Evolución desde ciclos waterfall a pipelines DevOps con Azure DevOps y GitHub; foco en CI/CD, calidad y gobernanza a gran escala."
+    "subtitle": "SDL: seguridad en cada fase",
+    "description": "Tras Blaster (2003), crean SDL (2004): seguridad integrada en cada paso del ciclo de desarrollo."
   },
   {
     "imagePath": "/images/cases/NVIDIA.jpg",
     "company": "NVIDIA",
-    "subtitle": "Squads, Tribes, Chapters & Guilds",
-    "description": "Organización en equipos autónomos con alineación por misión, diseño de plataformas internas y énfasis en velocidad de entrega."
+    "subtitle": "De drivers fallidos a ciclo robusto",
+    "description": "Fracaso del NV1 (1995) llevó a un SDLC con foco en compatibilidad, CUDA (2006) y seguridad continua."
   },
   {
     "imagePath": "/images/cases/Google.jpg",
     "company": "Google",
-    "subtitle": "SRE & Error Budgets",
-    "description": "Confiabilidad como disciplina de ingeniería; SLO/SLA, presupuestos de error y automatización para balancear features vs. estabilidad."
+    "subtitle": "SRE: confiabilidad como disciplina",
+    "description": "Caídas en 2000s impulsan SRE: SLOs/SLAs, métricas y confiabilidad integradas al SDLC desde el diseño."
   },
   {
     "imagePath": "/images/cases/Amazon.jpg",
     "company": "Amazon",
-    "subtitle": "Chaos Engineering",
-    "description": "Pruebas proactivas de resiliencia en producción, cultura de responsabilidad y plataformas de entrega continua altamente automatizadas."
+    "subtitle": "Del colapso al CI/CD",
+    "description": "Tras caídas en 2000s, adoptan DevOps, AWS (2006), CI/CD y Chaos Engineering para un ciclo resiliente."
   }
 ]
