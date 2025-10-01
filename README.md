@@ -1,16 +1,69 @@
-# React + Vite
+<div align="center">
+  <h1>🧭 Orígenes de la Ingeniería de Software – Timeline Interactiva</h1>
+  <p>Proyecto educativo que visualiza hitos históricos y modelos organizacionales usando React + Vite + Tailwind + Framer Motion.</p>
+  <img src="public/vite.svg" height="60" alt="Vite" />
+</div>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Características Principales
 
-Currently, two official plugins are available:
+- Línea de tiempo animada con progreso de scroll (Framer Motion).
+- Carga de imágenes optimizada con `<picture>` (AVIF → WebP → PNG/JPG) y prefetch de la siguiente.
+- Placeholder blur progresivo (sin parpadeo) + lightbox accesible.
+- Carrusel de casos (Microsoft, Spotify, Google, Netflix, Amazon) con scroll-snap nativo.
+- Script automático de conversión de imágenes (Sharp) para `public/images/timeline` y `public/images/cases`.
+- Respeta `prefers-reduced-motion`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🗂 Estructura
+```
+public/
+  images/
+    timeline/
+    cases/
+src/
+  components/
+  data/
+scripts/
+```
 
-## React Compiler
+## 🚀 Uso Rápido
+```bash
+npm install
+npm run dev
+```
+Abrir: http://localhost:5173
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🖼 Conversión de Imágenes
+```bash
+npm run images:convert
+node scripts/convert-images.mjs --quality=82 --avifQuality=55 --force
+```
+Omite archivos ya convertidos (`↷ Skip`).
 
-## Expanding the ESLint configuration
+## ♿ Accesibilidad
+- Lightbox: Escape para cerrar, foco navegable.
+- Botones carrusel con `aria-label`.
+- Motion reducido si el usuario lo prefiere.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🔧 Tecnologías
+React, Vite, Tailwind CSS, Framer Motion, Sharp, ESLint.
+
+## 🛠 Mejores Prácticas Aplicadas
+- Memoización de items.
+- Prefetch progresivo de imágenes.
+- Blur + saturación gradual para evitar flash.
+- Separación clara de datos (`/data`).
+
+## 📦 Build Producción
+```bash
+npm run build
+npm run preview
+```
+
+## 📌 Próximas Mejores (Ideas)
+- Blur hash / LQIP automático.
+- Zoom/pan dentro del lightbox.
+- Virtualización para cientos de eventos.
+- Modo oscuro.
+
+---
+¡Disfruta explorando la evolución de la ingeniería de software! 🚀

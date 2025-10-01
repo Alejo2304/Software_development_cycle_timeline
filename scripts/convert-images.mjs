@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-// Batch convert PNG/JPG images in public/assets to WebP & AVIF using sharp.
-// Usage: node scripts/convert-images.mjs
+// Batch convert PNG/JPG images in public/images/{cases,timeline} to WebP & AVIF using sharp.
+// Usage: node scripts/convert-images.mjs [--quality=80] [--avifQuality=50] [--force]
 // Optional flags:
 //   --quality=80 (webp quality)
 //   --avifQuality=50 (AVIF cq)
@@ -13,10 +13,14 @@ import sharp from 'sharp';
 
 const __dirname = path.dirname(url.fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, '..');
-const assetsDir = path.join(projectRoot, 'public', 'assets');
+const roots = [
+  path.join(projectRoot, 'public', 'images', 'cases'),
+  path.join(projectRoot, 'public', 'images', 'timeline')
+];
 
-if (!fs.existsSync(assetsDir)) {
-  console.error('No existe el directorio public/assets. Crea uno y coloca tus imágenes allí.');
+const existingRoots = roots.filter(r => fs.existsSync(r));
+if (!existingRoots.length) {
+  console.error('No se encontraron directorios de imágenes. Crea public/images/cases o public/images/timeline.');
   process.exit(1);
 }
 
@@ -31,47 +35,66 @@ const force = Boolean(args.force && args.force !== 'false');
 
 const exts = new Set(['.png', '.jpg', '.jpeg']);
 
-async function convertOne(file) {
-  const ext = path.extname(file).toLowerCase();
+async function convertOne(rootDir, relFile) {
+  const ext = path.extname(relFile).toLowerCase();
   if (!exts.has(ext)) return;
-  const base = file.slice(0, -ext.length);
+  const base = relFile.slice(0, -ext.length);
   const webpOut = base + '.webp';
   const avifOut = base + '.avif';
 
-  const inputFull = path.join(assetsDir, file);
-  const webpFull = path.join(assetsDir, webpOut);
-  const avifFull = path.join(assetsDir, avifOut);
+  const inputFull = path.join(rootDir, relFile);
+  const webpFull = path.join(rootDir, webpOut);
+  const avifFull = path.join(rootDir, avifOut);
 
   if (!force && fs.existsSync(webpFull) && fs.existsSync(avifFull)) {
-    console.log('↷ Skip (ya existen):', file);
+    console.log('↷ Skip (ya existen):', relFile);
     return;
   }
 
-  const img = sharp(inputFull);
   try {
     await Promise.all([
       sharp(inputFull).webp({ quality, effort: 4 }).toFile(webpFull),
       sharp(inputFull).avif({ quality: avifQuality, effort: 4 }).toFile(avifFull)
     ]);
-    console.log('✔ Convertido:', file, '→ *.webp / *.avif');
+    console.log('✔ Convertido:', relFile, '→ *.webp / *.avif');
   } catch (err) {
-    console.error('✖ Error convirtiendo', file, err.message);
+    console.error('✖ Error convirtiendo', relFile, err.message);
   }
 }
 
+function collectImages(rootDir) {
+  const collected = [];
+  function walk(dir) {
+    for (const entry of fs.readdirSync(dir)) {
+      const full = path.join(dir, entry);
+      const rel = path.relative(rootDir, full);
+      const stat = fs.statSync(full);
+      if (stat.isDirectory()) walk(full);
+      else if (exts.has(path.extname(entry).toLowerCase())) collected.push(rel);
+    }
+  }
+  walk(rootDir);
+  return collected;
+}
+
 async function run() {
-  const files = fs.readdirSync(assetsDir).filter(f => exts.has(path.extname(f).toLowerCase()));
-  if (!files.length) {
-    console.log('No hay imágenes PNG/JPG en public/assets.');
-    return;
+  let total = 0;
+  for (const root of existingRoots) {
+    const relRoot = path.relative(projectRoot, root);
+    const files = collectImages(root);
+    if (!files.length) {
+      console.log('No hay imágenes en', relRoot);
+      continue;
+    }
+    console.log(`\n→ Procesando ${files.length} archivo(s) en ${relRoot}`);
+    for (const f of files) {
+      // eslint-disable-next-line no-await-in-loop
+      await convertOne(root, f);
+      total++;
+    }
   }
-  console.log('Iniciando conversión de', files.length, 'archivo(s)...');
-  for (const f of files) {
-    // eslint-disable-next-line no-await-in-loop
-    await convertOne(f);
-  }
-  console.log('\nListo. Asegúrate de commitear los nuevos archivos .webp y .avif.');
-  console.log('Ejemplo de uso avanzado: node scripts/convert-images.mjs --quality=82 --avifQuality=55 --force');
+  console.log(`\nListo. Procesados ${total} archivo(s). Asegúrate de commitear los nuevos .webp/.avif.`);
+  console.log('Ejemplo: node scripts/convert-images.mjs --quality=82 --avifQuality=55 --force');
 }
 
 run();

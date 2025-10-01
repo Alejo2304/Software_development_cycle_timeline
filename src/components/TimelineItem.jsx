@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { monthIndex } from "./monthIndex";
 
@@ -13,6 +13,23 @@ const TimelineItem = ({ entry, idx, isLeft, prefersReducedMotion, prefetchSrc })
 
   const imgRef = useRef(null);
   const [loaded, setLoaded] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  const closeLightbox = useCallback(() => setOpen(false), []);
+  const openLightbox = useCallback(() => setOpen(true), []);
+
+  // Close on ESC & basic focus return
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e) => {
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeLightbox();
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [open, closeLightbox]);
 
   // Prefetch next image when this item enters viewport (improves perceived continuity)
   useEffect(() => {
@@ -88,7 +105,14 @@ const TimelineItem = ({ entry, idx, isLeft, prefersReducedMotion, prefetchSrc })
             const avif = base ? `${base}.avif` : null;
             const webp = base ? `${base}.webp` : null;
             return (
-              <div className="flex items-center justify-center bg-slate-50/90 rounded-t-3xl overflow-hidden aspect-[16/9] relative">
+              <div
+                className="flex items-center justify-center bg-slate-50/90 rounded-t-3xl overflow-hidden relative max-h-[480px] cursor-zoom-in group/image"
+                onClick={openLightbox}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openLightbox(); }}}
+                aria-label={`Ver imagen completa: ${entry.title}`}
+              >
                 <picture ref={imgRef}>
                   {/* Order: AVIF -> WebP -> fallback */}
                   {avif && <source srcSet={avif} type="image/avif" />}
@@ -103,10 +127,14 @@ const TimelineItem = ({ entry, idx, isLeft, prefersReducedMotion, prefetchSrc })
                     height={720}
                     sizes="(min-width: 1024px) 520px, (min-width: 768px) 50vw, 100vw"
                     onLoad={() => setLoaded(true)}
-                    className={`h-full w-full object-contain transition-transform duration-400 will-change-transform group-hover/entry:scale-[1.03] ${loaded ? 'opacity-100' : 'opacity-0'}`}
+                    className={`max-h-[480px] w-auto object-contain transition duration-500 ease-out will-change-transform ${loaded ? 'opacity-100 blur-0 saturate-100' : 'opacity-90 blur-sm saturate-50'} ${loaded ? 'group-hover/entry:scale-[1.03] group-hover/image:scale-[1.04]' : ''}`}
                   />
                 </picture>
-                <div className={`absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300 animate-pulse transition-opacity duration-500 ${loaded ? 'opacity-0' : 'opacity-60'}`} />
+                {/* Lightweight blur placeholder instead of pulse to reduce flicker */}
+                {!loaded && (
+                  <div className="absolute inset-0 bg-slate-200/60 backdrop-blur-sm" aria-hidden="true" />
+                )}
+                <span className="absolute bottom-2 right-2 text-[10px] px-2 py-1 rounded-md bg-slate-900/60 text-white tracking-wide backdrop-blur-sm opacity-0 group-hover/image:opacity-100 transition-opacity">Click para ampliar</span>
               </div>
             );
           })()}
@@ -144,6 +172,34 @@ const TimelineItem = ({ entry, idx, isLeft, prefersReducedMotion, prefetchSrc })
           {/* Glow accent line */}
           <div className="absolute -inset-x-0.5 top-0 h-0.5 bg-gradient-to-r from-sky-400 via-indigo-500 to-fuchsia-500 opacity-70" aria-hidden="true" />
         </motion.div>
+        {/* Lightbox overlay */}
+        {open && (
+          <div
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Imagen ampliada: ${entry.title}`}
+            onClick={closeLightbox}
+          >
+            <div className="relative max-w-5xl max-h-[90vh] w-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+              <button
+                type="button"
+                onClick={closeLightbox}
+                className="absolute -top-10 right-0 md:top-0 md:-right-10 text-slate-200 hover:text-white bg-slate-800/60 hover:bg-slate-700/70 rounded-full px-3 py-2 shadow focus:outline-none focus-visible:ring focus-visible:ring-indigo-400/70"
+                aria-label="Cerrar imagen"
+              >
+                ✕
+              </button>
+              <img
+                src={entry.imagePath}
+                alt={entry.title}
+                className="max-h-[90vh] w-auto max-w-full object-contain rounded-lg shadow-2xl"
+                loading="eager"
+                decoding="async"
+              />
+            </div>
+          </div>
+        )}
       </motion.article>
     </li>
   );
