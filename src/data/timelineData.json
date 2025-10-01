@@ -4,94 +4,58 @@
     "title": "Software’s Chronic Crisis",
     "subtitle": "Los persistentes problemas en el desarrollo de software",
     "resume": "El trabajo de Gibbs aborda la denominada “crisis crónica del software”, un fenómeno caracterizado por el fracaso reiterado de los grandes proyectos de desarrollo, la constante sobreestimación de la capacidad técnica de la industria y la falta de consolidación de una disciplina madura equiparable a otras ingenierías.",
-    "imagePath": "./src/assets/software_crisis.png"
+    "imagePath": "/assets/software_crisis.png"
   },
   {
     "date": { "month": "Agosto", "year": 1970 },
     "title": "Managing the Development of Large Software Systems",
     "subtitle": "El modelo en cascada de Royce",
     "resume": "Royce describe la gestión de grandes sistemas e introduce el modelo en cascada, con fases de requisitos, diseño, codificación y pruebas. Señala que es un enfoque útil pero riesgoso si no se agregan prácticas adicionales, como diseño preliminar y documentación clara.",
-    "imagePath": "./src/assets/cascade_model.png"
+    "imagePath": "/assets/cascade_model.png"
   },
   {
     "date": { "month": "Octubre", "year": 1968 },
     "title": "NATO Software Engineering Conference",
     "subtitle": "El nacimiento del término 'ingeniería de software'",
     "resume": "Reunión clave que definió la crisis del software y propuso tratar la programación como una disciplina de ingeniería. Destacó problemas de costos, calidad y gestión, y planteó la necesidad de métodos más sistemáticos y científicos en el desarrollo de software.",
-    "imagePath": "./src/assets/NATO1968.png"
+    "imagePath": "/assets/NATO1968.png"
   },
   {
     "date": { "month": "Octubre", "year": 1969 },
     "title": "NATO Software Engineering Techniques",
     "subtitle": "Discusión sobre técnicas y brechas de comunicación",
     "resume": "Conferencia en Roma que profundizó en aspectos técnicos como especificación, corrección, portabilidad y flexibilidad del software. Resaltó una gran brecha de comunicación entre académicos y la industria, y subrayó la importancia de la arquitectura de software.",
-    "imagePath": "./src/assets/NATO1969.png"
+    "imagePath": "/assets/NATO1969.png"
   },
   {
     "date": { "month": "Enero", "year": 1976 },
     "title": "Software Requirements: Are They Really a Problem?",
     "subtitle": "La importancia de requisitos bien definidos",
     "resume": "Bell y Thayer analizan problemas en la definición de requisitos, mostrando que son críticos y suelen ser la raíz de fallos en proyectos. Proponen métodos más rigurosos y empíricos para formular, validar y gestionar requisitos de software.",
-    "imagePath": "./src/assets/software_requirements_are_they_really.png"
+    "imagePath": "/assets/software_requirements_are_they_really.png"
   },
   {
     "date": { "month": "Febrero", "year": 1978 },
     "title": "The Need for Software Engineering",
     "subtitle": "La urgencia de prácticas disciplinadas",
     "resume": "Ware Myers revisa prácticas modernas como programación estructurada y equipos de programador jefe. Denuncia la baja productividad, el alto costo del mantenimiento y la falta de disciplina, proponiendo adoptar un enfoque de ingeniería completo para el software.",
-    "imagePath": "./src/assets/the_need_software_engineer.png"
+    "imagePath": "/assets/the_need_software_engineer.png"
   },
 
+  {
+    "date": { "month": "Marzo", "year": 1977 },
+    "title": "Essential Elements of Software Engineering Education",
+    "subtitle": "Bases para la enseñanza de la ingeniería de software",
+    "resume": "Freeman, Wasserman y Fairley identifican cinco áreas esenciales para formar ingenieros de software: (1) fundamentos de ciencias de la computación, (2) principios de gestión, (3) habilidades de comunicación, (4) resolución de problemas, y (5) metodologías de diseño. Proponen que la educación debe combinar teoría y práctica, incluir trabajo en equipo y proyectos realistas, y superar la brecha entre el entorno académico y las demandas de la industria.",
+    "imagePath": "/assets/study_software_engineering.png"
+  },
 
-  
   {
     "date": { "month": "Enero", "year": 1988 },
     "title": "Modelo en Espiral (Boehm)",
     "subtitle": "DoD/NASA: iteraciones guiadas por riesgo",
     "resume": "Barry W. Boehm propone ciclos con prototipos y evaluación de riesgos en cada vuelta para reducir incertidumbre antes de avanzar.",
-    "imagePath": "./src/assets/spiral-barry.png"
-  },
-  {
-    "date": { "month": "September", "year": 1998 },
-    "title": "Iterativo/Incremental (RUP)",
-    "subtitle": "IBM Rational + contratistas aero-defensa",
-    "resume": "Rational Unified Process estructura entregas por iteraciones con arquitectura base y gestión de requisitos evolutivos; reportes de adopción en la industria durante los 90s.",
-    "imagePath": "./src/assets/rup_iterativo.png"
-  },
-  {
-    "date": { "month": "June", "year": 2009 },
-    "title": "Lean Software en BBC Worldwide",
-    "subtitle": "Flujo, WIP limitado y mejora con datos",
-    "resume": "Equipo de BBC Worldwide aplica principios Lean al desarrollo: visualización del flujo, reducción de tiempos de entrega y decisiones basadas en métricas.",
-    "imagePath": "./src/assets/lean_bbc.png"
-  },
-  {
-    "date": { "month": "November", "year": 2011 },
-    "title": "V-Model en Automotriz (ISO 26262)",
-    "subtitle": "Bosch/OEMs: verificación ↔ validación",
-    "resume": "La industria automotriz consolida el V-Model alineado con ISO 26262: cada fase de desarrollo tiene su fase de prueba correspondiente con fuerte trazabilidad.",
-    "imagePath": "./src/assets/vmodel_auto.png"
-  },
-  {
-    "date": { "month": "May", "year": 2012 },
-    "title": "Ágil a escala en Spotify",
-    "subtitle": "Squads, tribes, chapters, guilds",
-    "resume": "Spotify publica su ‘Engineering Culture’: equipos pequeños y autónomos, sprints cortos y entrega continua para escalar prácticas ágiles.",
-    "imagePath": "./src/assets/spotify_agile.png"
-  },
-  {
-    "date": { "month": "June", "year": 2015 },
-    "title": "Transformación Ágil en ING Bank",
-    "subtitle": "Agilidad empresarial (tribus en banca)",
-    "resume": "ING Países Bajos migra a una organización basada en tribus/escenarios ágiles para acelerar entregas y alinearse a negocio y cumplimiento regulatorio.",
-    "imagePath": "./src/assets/ing_agile.png"
-  },
-  {
-    "date": { "month": "October", "year": 2009 },
-    "title": "Lean Startup y despliegue continuo (IMVU)",
-    "subtitle": "Construir-medir-aprender en producción",
-    "resume": "IMVU populariza despliegue continuo y experimentación rápida, base del enfoque Lean Startup para validar hipótesis con usuarios reales.",
-    "imagePath": "./src/assets/imvu_leanstartup.png"
+    "imagePath": "/assets/spiral-barry.png"
   }
 ]
 
