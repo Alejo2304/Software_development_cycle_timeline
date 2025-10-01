@@ -1,72 +1,97 @@
 [
   {
-    "date": { "month": "January", "year": 1712 },
-    "title": "Newcomen Steam Engine",
-    "subtitle": "Atmospheric engine for dewatering mines",
-    "resume": "Thomas Newcomen builds the first practical steam-powered pump, a foundation for the Industrial Revolution.",
-    "imagePath": "./src/assets/cover-collection-pacman.png"
+    "date": { "month": "Septiembre", "year": 1994 },
+    "title": "Software’s Chronic Crisis",
+    "subtitle": "Los persistentes problemas en el desarrollo de software",
+    "resume": "El trabajo de Gibbs aborda la denominada “crisis crónica del software”, un fenómeno caracterizado por el fracaso reiterado de los grandes proyectos de desarrollo, la constante sobreestimación de la capacidad técnica de la industria y la falta de consolidación de una disciplina madura equiparable a otras ingenierías.",
+    "imagePath": "./src/assets/software_crisis.png"
   },
   {
-    "date": { "month": "May", "year": 1765 },
-    "title": "Watt's Separate Condenser",
-    "subtitle": "Thermal efficiency breakthrough",
-    "resume": "James Watt improves the steam engine by adding a separate condenser, cutting energy losses dramatically.",
-    "imagePath": "/images/watt.jpg"
+    "date": { "month": "Agosto", "year": 1970 },
+    "title": "Managing the Development of Large Software Systems",
+    "subtitle": "El modelo en cascada de Royce",
+    "resume": "Royce describe la gestión de grandes sistemas e introduce el modelo en cascada, con fases de requisitos, diseño, codificación y pruebas. Señala que es un enfoque útil pero riesgoso si no se agregan prácticas adicionales, como diseño preliminar y documentación clara.",
+    "imagePath": "./src/assets/cascade_model.png"
   },
   {
-    "date": { "month": "August", "year": 1856 },
-    "title": "Bessemer Process",
-    "subtitle": "Mass steel production",
-    "resume": "Henry Bessemer’s converter enables high-volume, lower-cost steel—transforming railways, bridges, and buildings.",
-    "imagePath": "/images/bessemer.jpg"
+    "date": { "month": "Octubre", "year": 1968 },
+    "title": "NATO Software Engineering Conference",
+    "subtitle": "El nacimiento del término 'ingeniería de software'",
+    "resume": "Reunión clave que definió la crisis del software y propuso tratar la programación como una disciplina de ingeniería. Destacó problemas de costos, calidad y gestión, y planteó la necesidad de métodos más sistemáticos y científicos en el desarrollo de software.",
+    "imagePath": "./src/assets/NATO1968.png"
   },
   {
-    "date": { "month": "December", "year": 1903 },
-    "title": "Wright Flyer",
-    "subtitle": "Controlled, sustained flight",
-    "resume": "The Wright brothers achieve the first powered flight, opening the era of aeronautical engineering.",
-    "imagePath": "/images/wright.jpg"
+    "date": { "month": "Octubre", "year": 1969 },
+    "title": "NATO Software Engineering Techniques",
+    "subtitle": "Discusión sobre técnicas y brechas de comunicación",
+    "resume": "Conferencia en Roma que profundizó en aspectos técnicos como especificación, corrección, portabilidad y flexibilidad del software. Resaltó una gran brecha de comunicación entre académicos y la industria, y subrayó la importancia de la arquitectura de software.",
+    "imagePath": "./src/assets/NATO1969.png"
   },
   {
-    "date": { "month": "December", "year": 1947 },
-    "title": "Transistor",
-    "subtitle": "Solid-state revolution",
-    "resume": "Bardeen, Brattain, and Shockley demonstrate the transistor, enabling modern electronics and computing.",
-    "imagePath": "/images/transistor.jpg"
+    "date": { "month": "Enero", "year": 1976 },
+    "title": "Software Requirements: Are They Really a Problem?",
+    "subtitle": "La importancia de requisitos bien definidos",
+    "resume": "Bell y Thayer analizan problemas en la definición de requisitos, mostrando que son críticos y suelen ser la raíz de fallos en proyectos. Proponen métodos más rigurosos y empíricos para formular, validar y gestionar requisitos de software.",
+    "imagePath": "./src/assets/software_requirements_are_they_really.png"
   },
   {
-    "date": { "month": "October", "year": 1957 },
-    "title": "Sputnik 1",
-    "subtitle": "Space age begins",
-    "resume": "The first artificial satellite intensifies systems engineering and rocketry, reshaping global technology.",
-    "imagePath": "/images/sputnik.jpg"
+    "date": { "month": "Febrero", "year": 1978 },
+    "title": "The Need for Software Engineering",
+    "subtitle": "La urgencia de prácticas disciplinadas",
+    "resume": "Ware Myers revisa prácticas modernas como programación estructurada y equipos de programador jefe. Denuncia la baja productividad, el alto costo del mantenimiento y la falta de disciplina, proponiendo adoptar un enfoque de ingeniería completo para el software.",
+    "imagePath": "./src/assets/the_need_software_engineer.png"
+  },
+
+
+  
+  {
+    "date": { "month": "Enero", "year": 1988 },
+    "title": "Modelo en Espiral (Boehm)",
+    "subtitle": "DoD/NASA: iteraciones guiadas por riesgo",
+    "resume": "Barry W. Boehm propone ciclos con prototipos y evaluación de riesgos en cada vuelta para reducir incertidumbre antes de avanzar.",
+    "imagePath": "./src/assets/spiral-barry.png"
   },
   {
-    "date": { "month": "October", "year": 1969 },
-    "title": "ARPANET Link",
-    "subtitle": "Packet switching milestone",
-    "resume": "The first message is sent over ARPANET—an early step toward the modern Internet.",
-    "imagePath": "/images/arpanet.jpg"
+    "date": { "month": "September", "year": 1998 },
+    "title": "Iterativo/Incremental (RUP)",
+    "subtitle": "IBM Rational + contratistas aero-defensa",
+    "resume": "Rational Unified Process estructura entregas por iteraciones con arquitectura base y gestión de requisitos evolutivos; reportes de adopción en la industria durante los 90s.",
+    "imagePath": "./src/assets/rup_iterativo.png"
   },
   {
-    "date": { "month": "November", "year": 1971 },
-    "title": "Intel 4004",
-    "subtitle": "First commercial microprocessor",
-    "resume": "A complete CPU on a chip catalyzes embedded systems and personal computing.",
-    "imagePath": "/images/4004.jpg"
+    "date": { "month": "June", "year": 2009 },
+    "title": "Lean Software en BBC Worldwide",
+    "subtitle": "Flujo, WIP limitado y mejora con datos",
+    "resume": "Equipo de BBC Worldwide aplica principios Lean al desarrollo: visualización del flujo, reducción de tiempos de entrega y decisiones basadas en métricas.",
+    "imagePath": "./src/assets/lean_bbc.png"
   },
   {
-    "date": { "month": "April", "year": 1981 },
-    "title": "Space Shuttle STS‑1",
-    "subtitle": "Reusable spacecraft",
-    "resume": "Columbia’s launch advances materials, avionics, and mission operations engineering.",
-    "imagePath": "/images/shuttle.jpg"
+    "date": { "month": "November", "year": 2011 },
+    "title": "V-Model en Automotriz (ISO 26262)",
+    "subtitle": "Bosch/OEMs: verificación ↔ validación",
+    "resume": "La industria automotriz consolida el V-Model alineado con ISO 26262: cada fase de desarrollo tiene su fase de prueba correspondiente con fuerte trazabilidad.",
+    "imagePath": "./src/assets/vmodel_auto.png"
   },
   {
-    "date": { "month": "March", "year": 1989 },
-    "title": "World Wide Web Proposal",
-    "subtitle": "Hypertext for everyone",
-    "resume": "Tim Berners‑Lee drafts a distributed hypertext system, laying the groundwork for the Web.",
-    "imagePath": "/images/www.jpg"
+    "date": { "month": "May", "year": 2012 },
+    "title": "Ágil a escala en Spotify",
+    "subtitle": "Squads, tribes, chapters, guilds",
+    "resume": "Spotify publica su ‘Engineering Culture’: equipos pequeños y autónomos, sprints cortos y entrega continua para escalar prácticas ágiles.",
+    "imagePath": "./src/assets/spotify_agile.png"
+  },
+  {
+    "date": { "month": "June", "year": 2015 },
+    "title": "Transformación Ágil en ING Bank",
+    "subtitle": "Agilidad empresarial (tribus en banca)",
+    "resume": "ING Países Bajos migra a una organización basada en tribus/escenarios ágiles para acelerar entregas y alinearse a negocio y cumplimiento regulatorio.",
+    "imagePath": "./src/assets/ing_agile.png"
+  },
+  {
+    "date": { "month": "October", "year": 2009 },
+    "title": "Lean Startup y despliegue continuo (IMVU)",
+    "subtitle": "Construir-medir-aprender en producción",
+    "resume": "IMVU populariza despliegue continuo y experimentación rápida, base del enfoque Lean Startup para validar hipótesis con usuarios reales.",
+    "imagePath": "./src/assets/imvu_leanstartup.png"
   }
 ]
+

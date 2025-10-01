@@ -7,7 +7,7 @@ export default function App() {
     <main className="min-h-dvh bg-gradient-to-b from-slate-50 to-white">
       <Timeline data={data} />
       <footer className="py-10 text-center text-sm text-slate-500">
-        Built for Engineering Expo · React + Tailwind + framer‑motion
+        Pruebas de software- Luis Ojeda - Alejandro Ramos.
       </footer>
     </main>
   );
