@@ -98,7 +98,7 @@ const TimelineItem = ({ entry, idx, isLeft, prefersReducedMotion, prefetchSrc })
           {/* Image (optimized with <picture> for AVIF/WebP + fallback) */}
           {/* Aspect ratio container prevents layout shift; placeholder fades out on load */}
           {(() => {
-            const rawPath = entry.imagePath || "/images/placeholder.jpg";
+            const rawPath = entry.imagePath || "images/placeholder.jpg";
             // Derive base without extension for alt formats
             const match = rawPath.match(/^(.*)\.(png|jpg|jpeg)$/i);
             const base = match ? match[1] : null;

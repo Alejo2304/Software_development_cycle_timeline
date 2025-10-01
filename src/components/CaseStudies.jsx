@@ -98,8 +98,8 @@ export default function CaseStudies({ cases = [] }) {
       {/* Carrusel: scroll-snap nativo (ligero y fluido) */}
       <div
         ref={containerRef}
-        className="scroll-snap relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-2 pt-1
-                   flex gap-6 sm:gap-8 snap-x snap-mandatory"
+  className="scroll-snap relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 overflow-x-auto pb-4 pt-1
+       flex gap-6 snap-x snap-mandatory"
         role="region"
         aria-roledescription="carrusel"
         aria-label="Carrusel de casos"
@@ -122,8 +122,8 @@ export default function CaseStudies({ cases = [] }) {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.35 }}
             className={`group relative z-10 snap-center shrink-0
-                        min-w-[85%] sm:min-w-[70%] md:min-w-[55%] lg:min-w-[42%] xl:min-w-[38%]
-                        rounded-2xl bg-white/70 backdrop-blur-xs ring-1 ring-slate-200 shadow-md
+                        w-full max-w-[1100px] min-w-full
+                        rounded-2xl bg-white/75 backdrop-blur-xs ring-1 ring-slate-200 shadow-md
                         hover:shadow-xl transition-transform`}
           >
             {/* Borde superior con el mismo gradiente que la línea de tiempo */}
@@ -135,7 +135,7 @@ export default function CaseStudies({ cases = [] }) {
             {/* Imagen optimizada con <picture> (AVIF -> WebP -> fallback) */}
             <div className="overflow-hidden rounded-t-2xl bg-slate-50">
               {(() => {
-                const raw = c.imagePath || "/images/cases/placeholder.jpg";
+                const raw = c.imagePath || "images/cases/placeholder.jpg";
                 const match = raw.match(/^(.*)\.(png|jpe?g)$/i);
                 const base = match ? match[1] : null;
                 const avif = base ? base + '.avif' : null;

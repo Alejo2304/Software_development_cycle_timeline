@@ -1,24 +1,24 @@
 [
   {
-    "imagePath": "/images/cases/Microsoft.jpg",
+  "imagePath": "images/cases/Microsoft.jpg",
     "company": "Microsoft",
     "subtitle": "SDL: seguridad en cada fase",
     "description": "Tras Blaster (2003), crean SDL (2004): seguridad integrada en cada paso del ciclo de desarrollo."
   },
   {
-    "imagePath": "/images/cases/NVIDIA.jpg",
+  "imagePath": "images/cases/NVIDIA.jpg",
     "company": "NVIDIA",
     "subtitle": "De drivers fallidos a ciclo robusto",
     "description": "Fracaso del NV1 (1995) llevó a un SDLC con foco en compatibilidad, CUDA (2006) y seguridad continua."
   },
   {
-    "imagePath": "/images/cases/Google.jpg",
+  "imagePath": "images/cases/Google.jpg",
     "company": "Google",
     "subtitle": "SRE: confiabilidad como disciplina",
     "description": "Caídas en 2000s impulsan SRE: SLOs/SLAs, métricas y confiabilidad integradas al SDLC desde el diseño."
   },
   {
-    "imagePath": "/images/cases/Amazon.jpg",
+  "imagePath": "images/cases/Amazon.jpg",
     "company": "Amazon",
     "subtitle": "Del colapso al CI/CD",
     "description": "Tras caídas en 2000s, adoptan DevOps, AWS (2006), CI/CD y Chaos Engineering para un ciclo resiliente."
