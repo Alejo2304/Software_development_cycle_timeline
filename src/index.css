@@ -1,0 +1,29 @@
+/*
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*/
+@import "tailwindcss";
+
+html, body, #root { 
+    height: 100%; 
+}
+html { 
+    scroll-behavior: smooth; 
+}
+
+@theme{
+    /* Your existing custom colors and fonts */
+    --color-orange-USB: hsl(28, 91%, 54%);
+    --color-orange-USB-700: hsl(28, 91%, 40%);
+    --color-grey-300:	hsl(0, 0%, 27%);
+    --color-grey-500: hsl(0, 0%, 20%);
+    --color-grey-700: hsl(0, 0%, 15%);
+
+    --font-poppins: "Poppins", sans-serif;
+    --font-size-poppins: 16px;
+
+    /* 💡 NEW: Define the CSS variable for your glow shadow */
+    --box-shadow-glow: 0 0 0.5rem rgba(99,102,241,0.35), 0 0 2.5rem rgba(99,102,241,0.25);
+    
+    /* 💡 NEW: Define the CSS variable for your xs backdrop blur */
+    --backdrop-blur-xs: 2px;
+}

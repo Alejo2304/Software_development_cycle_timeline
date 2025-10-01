@@ -1,0 +1,72 @@
+[
+  {
+    "date": { "month": "January", "year": 1712 },
+    "title": "Newcomen Steam Engine",
+    "subtitle": "Atmospheric engine for dewatering mines",
+    "resume": "Thomas Newcomen builds the first practical steam-powered pump, a foundation for the Industrial Revolution.",
+    "imagePath": "./src/assets/cover-collection-pacman.png"
+  },
+  {
+    "date": { "month": "May", "year": 1765 },
+    "title": "Watt's Separate Condenser",
+    "subtitle": "Thermal efficiency breakthrough",
+    "resume": "James Watt improves the steam engine by adding a separate condenser, cutting energy losses dramatically.",
+    "imagePath": "/images/watt.jpg"
+  },
+  {
+    "date": { "month": "August", "year": 1856 },
+    "title": "Bessemer Process",
+    "subtitle": "Mass steel production",
+    "resume": "Henry Bessemer’s converter enables high-volume, lower-cost steel—transforming railways, bridges, and buildings.",
+    "imagePath": "/images/bessemer.jpg"
+  },
+  {
+    "date": { "month": "December", "year": 1903 },
+    "title": "Wright Flyer",
+    "subtitle": "Controlled, sustained flight",
+    "resume": "The Wright brothers achieve the first powered flight, opening the era of aeronautical engineering.",
+    "imagePath": "/images/wright.jpg"
+  },
+  {
+    "date": { "month": "December", "year": 1947 },
+    "title": "Transistor",
+    "subtitle": "Solid-state revolution",
+    "resume": "Bardeen, Brattain, and Shockley demonstrate the transistor, enabling modern electronics and computing.",
+    "imagePath": "/images/transistor.jpg"
+  },
+  {
+    "date": { "month": "October", "year": 1957 },
+    "title": "Sputnik 1",
+    "subtitle": "Space age begins",
+    "resume": "The first artificial satellite intensifies systems engineering and rocketry, reshaping global technology.",
+    "imagePath": "/images/sputnik.jpg"
+  },
+  {
+    "date": { "month": "October", "year": 1969 },
+    "title": "ARPANET Link",
+    "subtitle": "Packet switching milestone",
+    "resume": "The first message is sent over ARPANET—an early step toward the modern Internet.",
+    "imagePath": "/images/arpanet.jpg"
+  },
+  {
+    "date": { "month": "November", "year": 1971 },
+    "title": "Intel 4004",
+    "subtitle": "First commercial microprocessor",
+    "resume": "A complete CPU on a chip catalyzes embedded systems and personal computing.",
+    "imagePath": "/images/4004.jpg"
+  },
+  {
+    "date": { "month": "April", "year": 1981 },
+    "title": "Space Shuttle STS‑1",
+    "subtitle": "Reusable spacecraft",
+    "resume": "Columbia’s launch advances materials, avionics, and mission operations engineering.",
+    "imagePath": "/images/shuttle.jpg"
+  },
+  {
+    "date": { "month": "March", "year": 1989 },
+    "title": "World Wide Web Proposal",
+    "subtitle": "Hypertext for everyone",
+    "resume": "Tim Berners‑Lee drafts a distributed hypertext system, laying the groundwork for the Web.",
+    "imagePath": "/images/www.jpg"
+  }
+]
