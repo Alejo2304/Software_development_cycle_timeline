@@ -71,7 +71,7 @@ export default function CaseStudies({ cases = [] }) {
           Casos de estudio: Ciclo de desarrollo de software
         </h2>
         <p className="mt-3 text-slate-600">
-          Comparativa visual de 5 enfoques organizacionales y de ingeniería.
+          Comparativa visual de 4 enfoques organizacionales y de ingeniería.
         </p>
       </header>
 
@@ -132,14 +132,28 @@ export default function CaseStudies({ cases = [] }) {
               aria-hidden="true"
             />
 
-            {/* Imagen */}
-            <div className="overflow-hidden rounded-t-2xl">
-              <img
-                src={c.imagePath || "/images/cases/placeholder.jpg"}
-                alt={c.company}
-                loading="lazy"
-                className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-              />
+            {/* Imagen optimizada con <picture> (AVIF -> WebP -> fallback) */}
+            <div className="overflow-hidden rounded-t-2xl bg-slate-50">
+              {(() => {
+                const raw = c.imagePath || "/images/cases/placeholder.jpg";
+                const match = raw.match(/^(.*)\.(png|jpe?g)$/i);
+                const base = match ? match[1] : null;
+                const avif = base ? base + '.avif' : null;
+                const webp = base ? base + '.webp' : null;
+                return (
+                  <picture>
+                    {avif && <source srcSet={avif} type="image/avif" />}
+                    {webp && <source srcSet={webp} type="image/webp" />}
+                    <img
+                      src={raw}
+                      alt={c.company}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-64 sm:h-72 md:h-80 lg:h-80 w-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                    />
+                  </picture>
+                );
+              })()}
             </div>
 
             {/* Contenido */}
@@ -148,11 +162,11 @@ export default function CaseStudies({ cases = [] }) {
                 <h3 className="text-xl sm:text-2xl font-semibold text-slate-900">
                   {c.company}
                 </h3>
-                {typeof active === "number" && active === idx && (
+                {/*typeof active === "number" && active === idx && (
                   <span className="ml-3 inline-flex items-center rounded-full border border-slate-300 bg-white/80 px-2.5 py-1 text-xs font-medium text-slate-700 shadow-sm">
                     Activo
                   </span>
-                )}
+                )*/}
               </div>
               {c.subtitle && (
                 <p className="mt-1 text-sm uppercase tracking-wider text-slate-500">

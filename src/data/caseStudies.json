@@ -1,32 +1,26 @@
 [
   {
-    "imagePath": "/images/cases/microsoft.jpg",
+    "imagePath": "/images/cases/Microsoft.jpg",
     "company": "Microsoft",
     "subtitle": "Modelo híbrido + DevOps",
     "description": "Evolución desde ciclos waterfall a pipelines DevOps con Azure DevOps y GitHub; foco en CI/CD, calidad y gobernanza a gran escala."
   },
   {
-    "imagePath": "/images/cases/spotify.jpg",
-    "company": "Spotify",
+    "imagePath": "/images/cases/NVIDIA.jpg",
+    "company": "NVIDIA",
     "subtitle": "Squads, Tribes, Chapters & Guilds",
     "description": "Organización en equipos autónomos con alineación por misión, diseño de plataformas internas y énfasis en velocidad de entrega."
   },
   {
-    "imagePath": "/images/cases/google.jpg",
+    "imagePath": "/images/cases/Google.jpg",
     "company": "Google",
     "subtitle": "SRE & Error Budgets",
     "description": "Confiabilidad como disciplina de ingeniería; SLO/SLA, presupuestos de error y automatización para balancear features vs. estabilidad."
   },
   {
-    "imagePath": "/images/cases/netflix.jpg",
-    "company": "Netflix",
+    "imagePath": "/images/cases/Amazon.jpg",
+    "company": "Amazon",
     "subtitle": "Chaos Engineering",
     "description": "Pruebas proactivas de resiliencia en producción, cultura de responsabilidad y plataformas de entrega continua altamente automatizadas."
-  },
-  {
-    "imagePath": "/images/cases/amazon.jpg",
-    "company": "Amazon",
-    "subtitle": "Two‑Pizza Teams",
-    "description": "Equipos pequeños y dueños del producto, APIs como contratos entre equipos y mecanismos de revisión (PR/FAQs) para alinear decisiones."
   }
 ]
